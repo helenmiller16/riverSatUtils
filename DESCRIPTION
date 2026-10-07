@@ -1,0 +1,16 @@
+Package: riverSatUtils
+Type: Package
+Title: Utilities for satellite remote sensing for rivers
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Helen", "Miller",
+      email = "helenrm64@gmail.com",
+      role = c("aut", "cre")
+    )
+  )
+Description: Data management and analysis tools to manage projects related to satellite remote sensing on large rivers. 
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Config/roxygen2/version: 8.1.0
