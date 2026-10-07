@@ -1,0 +1,35 @@
+Utilities for managing projects related to satellite remote sensing in
+rivers.
+================
+
+I have designed this package for my own personal use to help with
+analysis related to research projects focused on analyzing and doing
+stats on spatial data from rivers, and connecting it to data derived
+from satellite remote sensing. Others are welcome to use it but I cannot
+garauntee that it will work for anyone else or that I will be able to
+respond to any questions or issues.
+
+It relies heavily on several awesome datasets built for river satellite
+remote sensing. They are:
+
+- [The Global River Widths from Landsat
+  database](https://zenodo.org/records/1297434) (Allen and
+  Pavelsky (2018) Global Extent of Rivers and Streams. Science.
+  <https://doi.org/10.1126/science.aat0636>)\
+- [The SWOT River Database (SWORD
+  v17c)](https://zenodo.org/records/22259077) (Altenau, E. H.,
+  Pavelsky, T. M., Durand, M. T., Yang, X., Frasson, R. P. d. M., &
+  Bendezu, L. (2021). The Surface Water and Ocean Topography (SWOT)
+  Mission River Database (SWORD): A global river network for satellite
+  data products. Water Resources Research, 57(7), e2021WR030054.
+  <https://doi.org/10.1029/2021WR030054>)
+
+## Installation
+
+``` r
+remotes::install_github("helenmiller16/riverSatUtils")
+```
+
+## Examples etc
+
+Coming soon…
