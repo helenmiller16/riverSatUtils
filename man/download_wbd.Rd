@@ -14,11 +14,11 @@ download_wbd(timeout_min = 60, overwrite = FALSE, keep_zip = FALSE)
 \item{keep_zip}{Logical; keep downloaded zip file after extraction.}
 }
 \value{
-Invisibly returns path to `WBD_National_GPKG.gpkg`.
+Invisibly returns path to \code{WBD_National_GPKG.gpkg}.
 }
 \description{
 Downloads the USGS WBD National GPKG zip archive into cache,
-extracts to `WBD_National_GPKG`, and updates the active WBD filepath.
+extracts to \code{WBD_National_GPKG}, and updates the active WBD filepath.
 }
 \examples{
 \dontrun{download_wbd()}

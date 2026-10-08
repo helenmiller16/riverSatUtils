@@ -7,10 +7,10 @@
 has_grwl(version = "01.01")
 }
 \arguments{
-\item{version}{GRWL version string. Currently only `"01.01"` is supported.}
+\item{version}{GRWL version string. Currently only \code{"01.01"} is supported.}
 }
 \value{
-Logical scalar. `TRUE` when configured GRWL directory exists.
+Logical scalar. \code{TRUE} when configured GRWL directory exists.
 }
 \description{
 Convenience checker that verifies the configured GRWL mask directory exists.

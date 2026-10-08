@@ -9,7 +9,7 @@ rmvnorm_prec(mu, prec, n.sims = 1)
 \arguments{
 \item{mu}{Numeric mean vector.}
 
-\item{prec}{Precision matrix (typically sparse `Matrix`).}
+\item{prec}{Precision matrix (typically sparse \code{Matrix}).}
 
 \item{n.sims}{Number of simulation draws.}
 }
@@ -17,9 +17,9 @@ rmvnorm_prec(mu, prec, n.sims = 1)
 Numeric matrix with one column per simulation draw.
 }
 \description{
-Samples from a Gaussian with mean `mu` and precision matrix `prec`
-(equivalently covariance `solve(prec)`) using sparse Cholesky
-factorization in `Matrix`.
+Samples from a Gaussian with mean \code{mu} and precision matrix \code{prec}
+(equivalently covariance \code{solve(prec)}) using sparse Cholesky
+factorization in \code{Matrix}.
 }
 \examples{
 \dontrun{

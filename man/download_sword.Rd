@@ -12,7 +12,7 @@ download_sword(
 )
 }
 \arguments{
-\item{version}{SWORD version. Currently only `"17c"` is supported.}
+\item{version}{SWORD version. Currently only \code{"17c"} is supported.}
 
 \item{timeout_min}{Download timeout in minutes.}
 
@@ -25,7 +25,7 @@ Invisibly returns path to extracted SWORD GPKG directory.
 }
 \description{
 Downloads SWORD v17c from Zenodo into the configured cache directory,
-unzips into `SWORD_v17`, and updates internal SWORD cache location.
+unzips into \code{SWORD_v17}, and updates internal SWORD cache location.
 }
 \examples{
 \dontrun{download_sword()}

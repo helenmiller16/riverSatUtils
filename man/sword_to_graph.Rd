@@ -7,24 +7,24 @@
 sword_to_graph(sword_reaches, version = "17c")
 }
 \arguments{
-\item{sword_reaches}{`sf` object containing SWORD reaches and required
+\item{sword_reaches}{\code{sf} object containing SWORD reaches and required
 topology columns. It should be some subset of the reaches from SWORD 17c.}
 
-\item{version}{SWORD version; currently only `"17c"` is supported.}
+\item{version}{SWORD version; currently only \code{"17c"} is supported.}
 }
 \value{
-A directed [sfnetworks::sfnetwork()] object.
+A directed \code{\link[sfnetworks:sfnetwork]{sfnetworks::sfnetwork()}} object.
 }
 \description{
-Converts an `sf` reaches object into an `sfnetwork`, where nodes represent
+Converts an \code{sf} reaches object into an \code{sfnetwork}, where nodes represent
 reaches and edges represent possible upstream/downstream connectivity.
 }
 \details{
 Expected fields include:
-`reach_id`, upstream IDs (`rch_id_up_1`...`rch_id_up_4`), downstream IDs
-(`rch_id_dn_1`...`rch_id_dn_4`), geometry, and `reach_len`, following the
+\code{reach_id}, upstream IDs (\code{rch_id_up_1}...\code{rch_id_up_4}), downstream IDs
+(\code{rch_id_dn_1}...\code{rch_id_dn_4}), geometry, and \code{reach_len}, following the
 format of SWORD 17c dataset.
 
-SWORD 17c can be downloaded to the cache directory via [download_sword()],
-and loaded via [load_sword()].
+SWORD 17c can be downloaded to the cache directory via \code{\link[=download_sword]{download_sword()}},
+and loaded via \code{\link[=load_sword]{load_sword()}}.
 }

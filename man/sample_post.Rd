@@ -7,18 +7,18 @@
 sample_post(sdr, n.sims = 1)
 }
 \arguments{
-\item{sdr}{`sdreport`-like object containing `par.fixed`, `par.random`,
-and `jointPrecision`.}
+\item{sdr}{\code{sdreport}-like object containing \code{par.fixed}, \code{par.random},
+and \code{jointPrecision}.}
 
 \item{n.sims}{Number of posterior draws.}
 }
 \value{
 Numeric matrix of sampled latent means indexed by node-time where
-  available.
+available.
 }
 \description{
-Builds a joint mean vector from `sdr$par.fixed` and `sdr$par.random`,
+Builds a joint mean vector from \code{sdr$par.fixed} and \code{sdr$par.random},
 samples from the corresponding Gaussian approximation via
-[rmvnorm_prec()], then reconstructs node-time latent means from
-components named `mu`, `w_n`, and `z_n_t`.
+\code{\link[=rmvnorm_prec]{rmvnorm_prec()}}, then reconstructs node-time latent means from
+components named \code{mu}, \code{w_n}, and \code{z_n_t}.
 }

@@ -7,7 +7,7 @@
 has_wbd()
 }
 \value{
-Logical scalar. `TRUE` when configured WBD file exists.
+Logical scalar. \code{TRUE} when configured WBD file exists.
 }
 \description{
 Check whether WBD data is available

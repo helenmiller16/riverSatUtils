@@ -11,6 +11,9 @@
 #' @param crs Coordinate reference system used for polygonization.
 #' @param res Raster resolution (meters) used during vector-raster-vector
 #'   conversion.
+#' @param min_width Minimum channel width to include in the output. Set to 0 to include all. Determined based on `max_width`. 
+#' @param sword_types_to_include Numeric vector indicating SWOT types to include. Default is to include all connected types (excludes 'lake off river'). See details. 
+#' @param grwl_types_to_include Numeric vector indicating GRWL reach types to include. Default is to include all types. See details.
 #' @return `sf` polygons with columns `reach_id` and `geometry`.
 #' @details
 #' Buffer width is constrained by:
@@ -20,25 +23,41 @@
 #'
 #' This follows a nearest-reach partitioning approach to avoid overlap between
 #' adjacent reach polygons.
-#'
+#' 
+#' SWORD reach types: 1 – river, 2 – lake off river, 3 – lake on river, 4 – dam or waterfall, 5 – unreliable topology, 6 – ghost reach/node.  
+#' 
+#' GRWL reach types: 0 – river, 1 – lake/reservoir, 2 – canal,  3 – tidally influenced river.
 #' @export
 sword_to_polygons <- function(sword_reaches,
                               crs = "EPSG:5070",
-                              res = 10 # resolution in meters to descretize when going from vector to rast and back again
-                              ) {
+                              res = 10, # resolution in meters to descretize when going from vector to rast and back again
+                              min_width = 60, 
+                              sword_types_to_include = c(1, 3, 4, 5, 6), 
+                              grwl_types_to_include = c(0, 1, 2, 3)) {
 
   sword_reaches <- st_transform(sword_reaches, crs)
-  template_rast <- rast(ext(sword_reaches), crs = crs(sword_reaches), resolution = res)
-  geoms <- st_geometry(sword_reaches)
+  sword_reaches <- sword_reaches[sword_reaches$type %in% sword_types_to_include & 
+                                   sword_reaches$lakeflag %in% grwl_types_to_include, ]
   # buffer width is the minimum of:
   # 1. the length of the reach (can't be wider than it is long)
   # 2. double its average width
   # 3. width + 2*sqrt(var(width)) (~95% quartile)
+  # but it can't be less than 60. 
   # Don't want it too big or else we end up with big polygons
-  widths <- pmin(as.numeric(st_length(sword_reaches)),
-                 sword_reaches$width + 2*sqrt(sword_reaches$width_var),
-                 2*sword_reaches$width)
-  geoms_buff <- st_buffer(geoms, widths)
+  if (min_width > 0) {
+    sword_reaches <- sword_reaches[sword_reaches$max_width >= min_width, ]
+  }
+  
+  widths <- pmax(rep(60, nrow(sword_reaches)), 
+                 pmin(
+                   as.numeric(st_length(sword_reaches)),
+                   sword_reaches$width + 2*sqrt(sword_reaches$width_var),
+                   2*sword_reaches$width))
+  
+  sword_buff <- st_buffer(sword_reaches, widths)
+  geoms_buff <- st_geometry(sword_buff)
+  
+  template_rast <- rast(ext(sword_buff), crs = crs(sword_buff), resolution = res)
   sword_reaches$buff_geom <- geoms_buff
 
   for (i in 1:nrow(sword_reaches)) {

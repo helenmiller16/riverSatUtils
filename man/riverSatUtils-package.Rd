@@ -6,17 +6,12 @@
 \alias{riverSatUtils-package}
 \title{RiverSatUtils: Utilities for RiverSAT data workflows}
 \description{
-Utilities for downloading, loading, and processing river network datasets
+Includes utilities for downloading, loading, and processing river network datasets
 (SWORD, GRWL, and WBD), converting river reaches to graph/polygon products,
 and creating project-level RiverSAT data bundles.
 }
 \author{
 \strong{Maintainer}: Helen Miller \email{helenrm64@gmail.com}
-
-Authors:
-\itemize{
-  \item Helen Miller \email{helenrm64@gmail.com}
-}
 
 }
 \keyword{internal}

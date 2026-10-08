@@ -13,7 +13,7 @@ download_grwl(
 )
 }
 \arguments{
-\item{version}{GRWL version. Currently only `"01.01"` is supported.}
+\item{version}{GRWL version. Currently only \code{"01.01"} is supported.}
 
 \item{timeout_min}{Download timeout in minutes.}
 
@@ -24,7 +24,7 @@ download_grwl(
 \item{download_tiles}{Logical; also download tiles shapefile archive.}
 }
 \value{
-Invisibly returns list with `mask` and `tiles` paths.
+Invisibly returns list with \code{mask} and \code{tiles} paths.
 }
 \description{
 Downloads GRWL mask archive from Zenodo and optionally the GRWL tiles

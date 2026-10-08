@@ -7,17 +7,17 @@
 get_dam_info(sword_reaches, append = TRUE)
 }
 \arguments{
-\item{sword_reaches}{`sf` object of SWORD reaches.}
+\item{sword_reaches}{\code{sf} object of SWORD reaches.}
 
-\item{append}{Logical; when `TRUE`, merge computed fields back into
-`sword_reaches`.}
+\item{append}{Logical; when \code{TRUE}, merge computed fields back into
+\code{sword_reaches}.}
 }
 \value{
-If `append = TRUE`, returns input reaches with added columns
-  `dist_to_obst1`...`dist_to_obst4`; otherwise returns a table keyed by
-  `reach_id`.
+If \code{append = TRUE}, returns input reaches with added columns
+\code{dist_to_obst1}...\code{dist_to_obst4}; otherwise returns a table keyed by
+\code{reach_id}.
 }
 \description{
 Builds a river graph from reaches and computes downstream graph distances to
-obstruction classes 1-4 (`obstr_type`), using edge lengths as weights.
+obstruction classes 1-4 (\code{obstr_type}), using edge lengths as weights.
 }

@@ -8,7 +8,7 @@
 getSwordCacheDir(swordDir)
 }
 \value{
-Character path to configured SWORD cache directory, or `NULL` if unset.
+Character path to configured SWORD cache directory, or \code{NULL} if unset.
 }
 \description{
 Get the SWORD cache directory

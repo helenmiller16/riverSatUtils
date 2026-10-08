@@ -20,16 +20,16 @@ make_riversat_project(
 }
 \arguments{
 \item{project_name}{Project name used to create output directory
-(`file.path(base_dir, project_name)`).}
+(\code{file.path(base_dir, project_name)}).}
 
-\item{aoi}{AOI geometry (`sf` point or polygon).}
+\item{aoi}{AOI geometry (\code{sf} point or polygon).}
 
 \item{base_dir}{Directory in which the project folder will be created.}
 
 \item{use_huc}{Logical; use intersecting HUC polygon(s) as project AOI.}
 
-\item{huc_level}{Character HUC level string (e.g., `"huc08"`) passed to
-[nhdplusTools::get_huc()] when `use_huc = TRUE`.}
+\item{huc_level}{Character HUC level string (e.g., \code{"huc08"}) passed to
+\code{\link[nhdplusTools:get_huc]{nhdplusTools::get_huc()}} when \code{use_huc = TRUE}.}
 
 \item{activate}{Logical; activate created directory as current RiverSAT
 project in package state.}
@@ -41,12 +41,12 @@ project in package state.}
 \item{make_polygons}{Logical; derive per-reach polygons.}
 
 \item{add_grwl_info}{Logical; append GRWL summaries to polygons
-(ignored if `make_polygons = FALSE`).}
+(ignored if \code{make_polygons = FALSE}).}
 
 \item{verbose}{Logical verbosity flag.}
 }
 \value{
-Invisibly returns `NULL`; writes project files to disk.
+Invisibly returns \code{NULL}; writes project files to disk.
 }
 \description{
 Creates a project directory, writes project boundary geometry, subsets SWORD
@@ -54,8 +54,8 @@ reaches to the AOI, optionally adds dam-distance summaries, optionally builds
 polygons, and optionally appends GRWL summaries.
 }
 \details{
-If `use_huc = TRUE`, AOI is expanded to intersecting HUC units via
-[nhdplusTools::get_huc()].
+If \code{use_huc = TRUE}, AOI is expanded to intersecting HUC units via
+\code{\link[nhdplusTools:get_huc]{nhdplusTools::get_huc()}}.
 }
 \examples{
 \dontrun{

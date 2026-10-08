@@ -7,7 +7,7 @@
 get_grwl_info(polygons)
 }
 \arguments{
-\item{polygons}{`sf` polygon object.}
+\item{polygons}{\code{sf} polygon object.}
 }
 \value{
 Input polygons with appended GRWL summary columns.
@@ -15,14 +15,18 @@ Input polygons with appended GRWL summary columns.
 \description{
 Intersects polygons with GRWL tile footprints, extracts class counts from
 matching GRWL mask rasters, and computes:
-* `grwl_water_count`: total non-zero GRWL pixels
-* `grwl_code`: dominant non-zero GRWL class
+\itemize{
+\item \code{grwl_water_count}: total non-zero GRWL pixels
+\item \code{grwl_code}: dominant non-zero GRWL class
+}
 }
 \details{
 GRWL classes:
-* 255 = River
-* 180 = Lake/reservoir
-* 126 = Tidal rivers/delta
-* 86  = Canal
-* 256 = No Data
+\itemize{
+\item 255 = River
+\item 180 = Lake/reservoir
+\item 126 = Tidal rivers/delta
+\item 86  = Canal
+\item 256 = No Data
+}
 }

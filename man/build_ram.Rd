@@ -14,11 +14,11 @@ names in column 2, and start values in column 3.}
 }
 \value{
 Data frame with RAM columns:
-  `heads`, `to`, `from`, `parameter`, `start`.
+\code{heads}, \code{to}, \code{from}, \code{parameter}, \code{start}.
 }
 \description{
-Converts model path syntax (via `sem:::parse.path`) into RAM-form columns:
-`heads`, `to`, `from`, `parameter`, and `start`.
+Converts model path syntax (via \code{sem:::parse.path}) into RAM-form columns:
+\code{heads}, \code{to}, \code{from}, \code{parameter}, and \code{start}.
 }
 \references{
 https://github.com/spacetime-ecologist/spacetime-ecologists-RTMB/blob/781d23ba00cb55321b5b9dd3580e675973952c83/chp4/build_ram.R

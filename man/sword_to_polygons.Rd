@@ -4,18 +4,31 @@
 \alias{sword_to_polygons}
 \title{Create non-overlapping reach polygons from SWORD lines}
 \usage{
-sword_to_polygons(sword_reaches, crs = "EPSG:5070", res = 10)
+sword_to_polygons(
+  sword_reaches,
+  crs = "EPSG:5070",
+  res = 10,
+  min_width = 60,
+  sword_types_to_include = c(1, 3, 4, 5, 6),
+  grwl_types_to_include = c(0, 1, 2, 3)
+)
 }
 \arguments{
-\item{sword_reaches}{`sf` line features for reaches with width metadata.}
+\item{sword_reaches}{\code{sf} line features for reaches with width metadata.}
 
 \item{crs}{Coordinate reference system used for polygonization.}
 
 \item{res}{Raster resolution (meters) used during vector-raster-vector
 conversion.}
+
+\item{min_width}{Minimum channel width to include in the output. Set to 0 to include all. Determined based on \code{max_width}.}
+
+\item{sword_types_to_include}{Numeric vector indicating SWOT types to include. Default is to include all connected types (excludes 'lake off river'). See details.}
+
+\item{grwl_types_to_include}{Numeric vector indicating GRWL reach types to include. Default is to include all types. See details.}
 }
 \value{
-`sf` polygons with columns `reach_id` and `geometry`.
+\code{sf} polygons with columns \code{reach_id} and \code{geometry}.
 }
 \description{
 Creates a per-reach polygon representation by buffering each reach,
@@ -24,10 +37,16 @@ and converting the selected mask back to polygons.
 }
 \details{
 Buffer width is constrained by:
-* reach length,
-* `width + 2 * sqrt(width_var)`, and
-* `2 * width`.
+\itemize{
+\item reach length,
+\item \code{width + 2 * sqrt(width_var)}, and
+\item \code{2 * width}.
+}
 
 This follows a nearest-reach partitioning approach to avoid overlap between
 adjacent reach polygons.
+
+SWORD reach types: 1 – river, 2 – lake off river, 3 – lake on river, 4 – dam or waterfall, 5 – unreliable topology, 6 – ghost reach/node.
+
+GRWL reach types: 0 – river, 1 – lake/reservoir, 2 – canal,  3 – tidally influenced river.
 }

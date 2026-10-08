@@ -10,7 +10,7 @@ getRiversatProject()
 \item{project_dir}{Unused argument retained by current implementation.}
 }
 \value{
-Character path to active project directory, or `NULL`.
+Character path to active project directory, or \code{NULL}.
 }
 \description{
 Get active RiverSAT project directory

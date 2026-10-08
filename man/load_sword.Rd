@@ -13,27 +13,27 @@ load_sword(
 )
 }
 \arguments{
-\item{version}{SWORD version; currently only `"17c"` is supported.}
+\item{version}{SWORD version; currently only \code{"17c"} is supported.}
 
-\item{load_from_project}{Logical; read from active project file when `TRUE`.}
+\item{load_from_project}{Logical; read from active project file when \code{TRUE}.}
 
-\item{continent}{Continent code used for cache file selection (`na`, `sa`,
-`oc`, `eu`, `as`, `af`) when not loading from project.}
+\item{continent}{Continent code used for cache file selection (\code{na}, \code{sa},
+\code{oc}, \code{eu}, \code{as}, \code{af}) when not loading from project.}
 
-\item{layer}{Layer name in geopackage (`"reaches"` or `"nodes"`); ignored
+\item{layer}{Layer name in geopackage (\code{"reaches"} or \code{"nodes"}); ignored
 when loading from project.}
 
 \item{download}{Logical; auto-download SWORD if not found locally (ignored
 when loading from project).}
 }
 \value{
-An `sf` object from [sf::read_sf()].
+An \code{sf} object from \code{\link[sf:st_read]{sf::read_sf()}}.
 }
 \description{
-Loads SWORD v17c from either an active RiverSAT project (`reaches.gpkg`) or
+Loads SWORD v17c from either an active RiverSAT project (\code{reaches.gpkg}) or
 from cache by continent/layer.
 }
 \details{
-When `load_from_project = TRUE`, reads the file configured in package state.
-Otherwise reads `sword_<CONTINENT>_v17c.gpkg` from SWORD cache.
+When \code{load_from_project = TRUE}, reads the file configured in package state.
+Otherwise reads \verb{sword_<CONTINENT>_v17c.gpkg} from SWORD cache.
 }

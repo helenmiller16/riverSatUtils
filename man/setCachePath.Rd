@@ -14,10 +14,12 @@ Invisibly updates internal package state.
 }
 \description{
 Updates package cache base path and resets derived default locations for:
-* SWORD GPKG directory (`SWORD_v17/gpkg`)
-* GRWL mask directory (`GRWL_v01.01/GRWL_mask_V01.01`)
-* GRWL tiles directory (`GRWL_v01.01/GRWL_tiles_v01.01`)
-* WBD directory (`WBD_National_GPKG`)
+\itemize{
+\item SWORD GPKG directory (\code{SWORD_v17/gpkg})
+\item GRWL mask directory (\code{GRWL_v01.01/GRWL_mask_V01.01})
+\item GRWL tiles directory (\code{GRWL_v01.01/GRWL_tiles_v01.01})
+\item WBD directory (\code{WBD_National_GPKG})
+}
 }
 \examples{
 setCachePath(tempdir())

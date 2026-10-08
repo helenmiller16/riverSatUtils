@@ -14,5 +14,5 @@ Invisibly updates internal package state.
 }
 \description{
 Sets the active project directory and, when present, configures
-`reaches.gpkg` as the active SWORD filepath.
+\code{reaches.gpkg} as the active SWORD filepath.
 }

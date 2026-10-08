@@ -21,13 +21,13 @@ load_sword <- function(version = "17c",
                        continent = c("na", "sa", "oc", "eu", "as", "af")[1], # continents: na = north america, sa = south america, oc = oceania, eu = europe, as = asia, af = africa. This determines which file to load if project_dir = NULL.
                        layer = "reaches", # reaches or nodes. ignored if load_from_project = TRUE
                        download = FALSE# automatically download the dataset if it's not found in the cache? (~4GB size) Ignored if load_from_project = TRUE
-
+                       
 ) {
   if (version != "17c") stop("Only version = '17c' currently supported, sorry.")
   if (load_from_project) {
     if (file.exists(getSwordFilepath())) {
       fp <- getSwordFilepath()
-      layer = NULL
+      return(read_sf(fp))
     } else {
       stop("could not find reaches file in project dir.")
     }
@@ -41,6 +41,6 @@ load_sword <- function(version = "17c",
         stop("Could not find SWORD dataset locally. Set download = TRUE to download or update sword cache path via setSwordCachePath() to the correct location.")
       }
     }
+    read_sf(fp, layer = layer)
   }
-  read_sf(fp, layer = layer)
 }
